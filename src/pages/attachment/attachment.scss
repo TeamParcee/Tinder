@@ -1,0 +1,27 @@
+page-attachment {
+  .button {
+    width: 100%;
+    height: 70px;
+    .button-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      text-transform: capitalize;
+      color: #3b414a;
+      img {
+        height: 35px;
+        margin-bottom: 8px;
+      }
+      .document_picker{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}

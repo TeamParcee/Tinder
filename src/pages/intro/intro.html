@@ -1,0 +1,42 @@
+<ion-content>
+  <div id="top">
+    <ion-slides pager>
+
+      <ion-slide>
+        <img src="assets/imgs/welcome.svg" alt="">
+        <h5>Welcome</h5>
+        <p>Hello, welcome to tinder</p>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="assets/imgs/expert.svg" alt="">
+        <h5>Get Friends</h5>
+        <p>Match your friends and date each other</p>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="assets/imgs/price.svg" alt="">
+        <h5>Less Money</h5>
+        <p>Buy a subscription pack and get more features</p>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+  <div id="bottom">
+    <button ion-button="" icon-only="" clear no-margin="" color="grey" id="minimize_btn" (tap)="minimize_btn()"><ion-icon name="ios-arrow-up"></ion-icon></button>
+    <button ion-button="" class="login_btn" (tap)="match()"> Log in With Facebook</button>
+    <button ion-button="" outline color="grey" class="login_btn" style="margin-top: 16px" (tap)="phone()"> Log in With Phone Number</button>
+
+    <div class="expend_intro">
+      <h3>We take your privacy seriously</h3>
+      <p>We don't post anything to facebook</p>
+      <p>Other users cannot contact you unless you've already been matched</p>
+    </div>
+
+    <p class="small_intro">
+      <span>  We don't post anything to facebook. <button ion-button="" icon-only="" clear small no-margin="" color="grey" id="expend_btn" (tap)="expend()"><ion-icon name="ios-arrow-down"></ion-icon></button></span>
+      <br>
+      By signing In, you agree with our <a href="https://www.google.co.in/?gfe_rd=cr&dcr=0&ei=VceoWtyAPMfD8weSuqaYDQ">Terms of Service</a> and <a href="">Privacy Policy</a>
+    </p>
+  </div>
+</ion-content>

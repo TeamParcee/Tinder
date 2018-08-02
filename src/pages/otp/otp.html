@@ -1,0 +1,42 @@
+<ion-content padding>
+  <ion-header no-border="">
+
+    <ion-navbar transparent=""></ion-navbar>
+
+  </ion-header>
+
+  <div class="wrapper">
+    <h2>Enter Your OTP</h2>
+
+    <form (ngSubmit)="logForm()">
+
+    <ion-row no-padding="">
+      <ion-col col-3>
+        <ion-input type="tel" #otp1 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" [(ngModel)]="numberverify.otpOne" name="title" (keyup)="next(otp2)">
+        </ion-input>
+      </ion-col>
+      <ion-col col-3>
+        <ion-input type="tel" #otp2 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" [(ngModel)]="numberverify.otpTwo" name="title" (keyup)="next(otp3)">
+        </ion-input>
+      </ion-col>
+      <ion-col col-3>
+        <ion-input type="tel" #otp3 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" [(ngModel)]="numberverify.otpThree" name="title" (keyup)="next(otp4)">
+        </ion-input>
+      </ion-col>
+      <ion-col col-3>
+        <ion-input type="tel" #otp4 class="otp" pattern="[0-9]{6}" maxlength="1" [(ngModel)]="numberverify.otpFour" name="title" size="1">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+      <button ion-button="" outline class="login_btn">
+        Verify
+      </button>
+
+    </form>
+
+    <button ion-button="" clear text-capitalize="" color="dark" small>
+      Resend OTP
+    </button>
+  </div>
+</ion-content>

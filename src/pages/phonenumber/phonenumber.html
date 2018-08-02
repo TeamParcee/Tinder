@@ -1,0 +1,16 @@
+<ion-content padding>
+  <ion-header no-border="">
+
+    <ion-navbar transparent=""></ion-navbar>
+
+  </ion-header>
+
+  <div id="recaptcha-container"></div>
+  <div class="wrapper">
+    <h2>Verify your phone number <br>to create an account</h2>
+    <input [(ngModel)]="phoneNumber" type="tel" placeholder="Enter your Phone number here">
+    <button id="sign-in-button" ion-button="" outline class="login_btn" (tap)="otp()">
+      Send OTP
+    </button>
+  </div>
+</ion-content>

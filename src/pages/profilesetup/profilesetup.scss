@@ -1,0 +1,62 @@
+page-profilesetup {
+  button.back-button.bar-button-default-ios {
+    padding-left: 8px;
+    span.back-button-text.back-button-text-ios {
+      display: none;
+    }
+  }
+  .scroll-content {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .wrapper {
+      width: 100%;
+      padding: 0 16px;
+      h2 {
+        color: #525252;
+        margin: 0;
+        margin-bottom: 32px;
+      }
+      .image_wrapper {
+        width: 80px;
+        height: 80px;
+        margin: auto;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      input {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        outline: 0;
+        padding: 16px 0;
+        margin: 32px 0;
+        letter-spacing: 0.5px;
+        font-size: 2.4rem;
+        font-weight: 500;
+      }
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        font-size: 16px;
+        color: #525252;
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        font-size: 16px;
+        color: #525252;
+      }
+
+      :-ms-input-placeholder { /* Microsoft Edge */
+        font-size: 16px;
+        color: #525252;
+      }
+      .login_btn {
+        width: 100%;
+        min-height: 50px;
+        border-radius: 6px;
+        margin: 0;
+      }
+    }
+  }
+}

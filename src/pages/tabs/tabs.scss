@@ -1,0 +1,68 @@
+page-tabs {
+  super-tabs-toolbar {
+    position: relative;
+    &:before {
+      left: 0;
+      bottom: -5px;
+      background-position: left 0 top -2px;
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMUCS0gBIh/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+      background-repeat: repeat-x;
+      opacity: 0.3;
+      content: "";
+    }
+    }
+    super-tab-button.icon-only {
+      min-height: 60px;
+      display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    opacity: 0.6;
+    filter: grayscale(1);
+      .icon {
+        min-width: 25px;
+        min-height: 25px;
+        background-size: 25px;
+      }
+    }
+    super-tab-button.icon-only.selected {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+    .indicator {
+      display: none;
+    }
+    ion-toolbar {
+      &:after {
+        display: none;
+      }
+    }
+    .tab-button-icon {
+      background-size: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 0 !important;
+    }
+    ion-icon {
+      &[class*="custom-"] {
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        width: 1em;
+        height: 1em;
+      }
+      // custom icons
+      &[class*="profile"] {
+        background-image: url(../assets/imgs/profileicon.svg);
+        // background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAMAAACcwCSMAAAAY1BMVEX///8AAAD5+fnKysp2dnbQ0NAiIiK4uLiSkpLBwcFaWlppaWnf39+8vLzHx8dAQEDm5ubs7Ow6OjoVFRUODg7Z2dkuLi7z8/OwsLBkZGQpKSkdHR2CgoIzMzOhoaGbm5tPT0945y8+AAADfElEQVRoge3b2ZaiMBAG4ACi0CIigiKu7/+UI0swJGx/BWT6NHUx08em8h2SIkRIM9YS9tYo4v5oO6Q7Hveyga2NpibGJ8IzTp9DoYEEy/UMMbY4vq014EG5z1puZKK2GdUaeELJl1qu4aO4X8+/QMl5r+2YabKf7CcLxa0s6yfL3+HjluNu9pMW/g73d+PwlYrgll0LBX/YUAQy/hNLR1Rd+TCkOCk4GE8Zb4p84rwoH+918ccQPLv+NuqnX8KNDburH34Lv7P8v7UY15eCX9dIRAoepfIxOVvgZ7MWCu4zEwnlUrvI+WcBV24cU08y5v+N+2PgPhF3XNf193R8778bcHBcmnngud2u5yv38048qSejNmP1fGUR14mbJzHXwXFHzD+p7XfhzFt/cm+4zdjtk79W14/dOAuc1z6PlUux39fYqsh/OYH6yx48O6KYrejR3kA/PmEs+IL/Tfzbdjn3F/+61pfDFfCZYsFnxFdfDwGf9VL7uzPcgi/4gvfEebcjPIofB49Tw0jjeXAvf6YeYQ/yR8K9Y3FrOlJ0TZzbNF0Pj8X7Mj7uWnhcnHdUvEo5wroOzl8++fxdCtrzGjgfb796k4OOOx0XbKpOxuNIsCs9gsadisfHmv05d0Qn4l4k2Z9zB3qehjfYFJ2E81qTnofaaNVRcE8ebx5ozRNwXucND6EtrOZxXKlzMbCah/FqTm3+NTTTojgf79YH/xYw7iDO7fDW9sXzFg7XMfycGoPjehgZt4bb2ZaDcXG7C5Ojf4sFOObqy+bWuPQ3h1b7zhkY/Z3++78uLfiCT4cfks2gSPonVxivvRztjgGvPyecXvsXFBi+Q/D+d/0Y7nVhUhwb3txq4dVOorWy5YVHyt96b/pbg28sRcvX1tMKrsURk9xYuN6ySvIAmzDJlBspTo26V250GLbHlTDDJe09z/t84P5ayvRaVl2kTGKHaHCtkfHqcpf0gwGMNxlvrnmkznVw3vOpUHVeivU5Ha9qvjr3AKpzPZzrvOp4rUH7yOmLiVrVwbWmiVf6u+cDkq21jCr1NAhSkq23hivH/X4njLc2Xt8wB9u6q1dhpzBwfY+EfxZW6HiPgXOdYo/wpSGhjfc4OLOfW3hT6mg4PRZ8wRd8wf8GLv0pyfQh/inJTMHC/mOmihB70jNuvJchq7nsVVZ5u1l6Pnyf9z/nVDXoqWjjEwAAAABJRU5ErkJggg==);
+      }
+      &[class*="profilematch"] {
+        background-image: url(../assets/imgs/matchicon.svg);
+      }
+      &[class*="chat"] {
+        background-image: url(../assets/imgs/chat.svg);
+      }
+    }
+  }
+ 

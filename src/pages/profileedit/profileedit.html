@@ -1,0 +1,153 @@
+<ion-header>
+
+  <ion-navbar color="completelight">
+    <ion-title>Edit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="user_img_wrapper">
+    <ion-row>
+      <ion-col col-8>
+        <div class="item_img">
+          <div id="img_wrapper">
+            <img src="http://styloss.com/wp-content/uploads/2015/04/1-1.jpg" alt="">
+          </div>
+          <button ion-button="" small icon-only="" mode="ios">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="item_img">
+          <div class="img_wrapper">
+            <img src="https://ae01.alicdn.com/kf/HTB1mWLxSFXXXXbEaXXXq6xXFXXXB/RoShari-Vintage-aviator-sunglasses-men-polarized-women-Retro-Rivet-sunglass-Driving-Sun-glasses-for-Men-lunette.jpg_640x640.jpg" alt="">
+          </div>
+          <button ion-button="" small icon-only="" mode="ios">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </div>
+        <div class="item_img">
+          <div class="img_wrapper">
+            <img src="https://ae01.alicdn.com/kf/HTB1QMAEKpXXXXbTXVXXq6xXFXXXB/Round-box-male-sunglasses-vintage-big-box-large-sunglasses-classic-mirror-driver-all-match-black-sunglasses.jpg" alt="">
+          </div>
+          <button ion-button="" small icon-only="" mode="ios">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </div>
+
+      </ion-col>
+    </ion-row>
+    <ion-row class="btm_imgs">
+      <ion-col col-4>
+        <div class="item_img" id="bottom_img">
+          <div class="img_wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUrduG62_6UNz7eAe4wFogHaY4-aQbaKiZhJvAlDW2b5YPQDd" alt="">
+          </div>
+          <button ion-button="" small icon-only="" mode="ios">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="item_img">
+          <div class="img_wrapper">
+            <img src="https://ae01.alicdn.com/kf/HTB1avSZJFXXXXcuXFXXq6xXFXXX6/2016-Newest-Arrival-D-Brand-Polarized-Sunglasses-Women-Men-Fashion-Vintage-Designer-Sun-Glasses-Square-Style.jpg" alt="">
+          </div>
+          <button ion-button="" small icon-only="" mode="ios">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="item_img">
+          <div class="img_wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3m1H454V8GGtgK1S8IBWvXHdFjqLV8_dfd_5kLnCbUUSN4fur" alt="">
+          </div>
+          <button ion-button="" small icon-only="" mode="ios">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-list>
+    <ion-list-header mode="md">About you</ion-list-header>
+    <ion-item no-lines="">
+      <ion-textarea type="text" placeholder="Write Something About You.." clearInput=""></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Job Title</ion-list-header>
+    <ion-item no-lines="">
+      <ion-input type="text" placeholder="Add Job Title" clearInput=""></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Company</ion-list-header>
+    <ion-item no-lines="">
+      <ion-input type="text" placeholder="Add Company" clearInput=""></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">School</ion-list-header>
+    <ion-item no-lines="">
+      <ion-input type="text" placeholder="Add School" clearInput=""></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">College</ion-list-header>
+    <ion-item no-lines="">
+      <ion-input type="text" placeholder="Add College" clearInput=""></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Connect</ion-list-header>
+    <ion-item no-lines="">
+      <ion-icon name="logo-instagram" item-start></ion-icon>
+      Connect Instagram
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-icon name="logo-facebook" item-start></ion-icon>
+      Connect Facebook
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-icon name="logo-twitter" item-start></ion-icon>
+      Connect Twitter
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list radio-group>
+    <ion-list-header mode="md">Gender</ion-list-header>
+    <ion-item>
+      <ion-label>Male</ion-label>
+      <ion-radio checked="true" value="male"></ion-radio>
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-label>Female</ion-label>
+      <ion-radio checked="false" value="female"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Control profile</ion-list-header>
+    <ion-item>
+      <ion-label>Don't show my age</ion-label>
+      <ion-toggle item-end checked="false" mode="wp"></ion-toggle>
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-label>Make my distance invisible</ion-label>
+      <ion-toggle item-end checked="false" mode="wp"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

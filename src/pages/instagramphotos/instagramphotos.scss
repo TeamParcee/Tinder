@@ -1,0 +1,14 @@
+page-instagramphotos {
+  .masonry-layout {
+    column-count: 2;
+    column-gap: 0;
+    .masonry-layout__panel {
+      break-inside: avoid;
+      .masonry-layout__panel-content {
+        img{
+          display: flex;
+        }
+      }
+    }
+  }
+}

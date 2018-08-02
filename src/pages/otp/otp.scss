@@ -1,0 +1,51 @@
+page-otp {
+  button.back-button.bar-button-default-ios {
+    padding-left: 8px;
+    span.back-button-text.back-button-text-ios {
+      display: none;
+    }
+  }
+  .scroll-content {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0 !important; 
+    .wrapper {
+      width: 100%;
+      padding: 0 16px;
+      h2 {
+        color: #525252;
+        margin: 0;
+      }
+      .row {
+        display: flex;
+        width: calc(100% + 16px);
+        left: -8px;
+        position: relative;
+        margin: 32px 0;
+        .col {
+          padding: 8px;
+          input {
+            border-bottom: 1px solid #ccc;
+            margin: 0;
+            margin-right: 8px;
+            width: 100%;
+            text-align: center;
+            font-size: 22px;
+          }
+        }
+
+      }
+      .login_btn {
+        width: 100%;
+        min-height: 50px;
+        border-radius: 6px;
+        margin: 0;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+}

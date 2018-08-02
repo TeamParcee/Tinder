@@ -1,0 +1,394 @@
+page-match {
+  transition: all ease-in-out 0.3s;
+
+  * {
+    transition: all ease-in-out 0.3s;
+  }
+  .scroll-content {
+    padding: 8px;
+    background-color: #f8f8f8;
+    #card-stack {
+      .card {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+    .content {
+      background-color: white;
+    }
+    ion-card.card {
+      margin: 0;
+      min-width: 100%;
+      box-shadow: none;
+      background-color: transparent !important;
+      transition: all linear 0s;
+    }
+    #tutorial {
+      position: absolute;
+      top: 8px;
+      z-index: 3;
+      left: 8px;
+      right: 8px;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.74);
+      height: calc(100vh - 145px);
+      .row {
+        height: 100%;
+        [col-6] {
+          padding: 0;
+          height: 70%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:first-child {
+            border-right: 1px dashed #fff;
+            img {
+              width: 110px;
+            }
+          }
+          img {
+            width: 128px;
+          }
+        }
+        [col-12] {
+          padding: 0;
+          height: 30%;
+          border-top: 1px dashed #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 150px;
+          }
+        }
+      }
+    }
+    .profile {
+      position: relative;
+      border-radius: 8px;
+      .top_slide {
+        display: flex;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        right: 0;
+        padding: 4px;
+        z-index: 1;
+        i {
+          border-radius: 8px;
+          min-height: 4px;
+          flex: 1;
+          background-color: #fff;
+          margin: 0 4px;
+          opacity: 0.5;
+        }
+      }
+      .slide_img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        z-index: 1;
+        div {
+          flex: 1;
+        }
+      }
+      .pro_img {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: calc(100vh - 145px);
+        border-radius: 8px;
+        position: relative;
+        #like {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          z-index: 2;
+          font-size: 25px;
+          font-weight: bold;
+          letter-spacing: 2px;
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 8px 16px;
+          border-radius: 8px;
+        }
+        #dislike {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          z-index: 2;
+          font-size: 25px;
+          font-weight: bold;
+          letter-spacing: 2px;
+          background-color: #F44336;
+          color: #fff;
+          padding: 8px 16px;
+          border-radius: 8px;
+        }
+      }
+      .text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 16px;
+        color: #fff;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);;
+        text-transform: capitalize;
+        z-index: 2;
+        display: flex;
+        .description {
+          flex: 1;
+          h2 {
+            font-size: 28px;
+            color: #fff;
+          }
+          p {
+            font-size: 18px;
+            color: #fff;
+          }
+        }
+        .button {
+          transition: all linear 0.3s;
+        }
+      }
+    }
+    #card-stack {
+      display: none;
+      //box-shadow: 0 0 8px rgba(0, 0, 0, 0.64);
+      border-radius: 8px;
+      background-image: url("../assets/imgs/user_img_placeholder.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: calc(100vh - 145px);
+      position: relative;
+    }
+    #card-stack.active {
+      display: block;
+    }
+    #find.hide {
+      display: none;
+    }
+    #find {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      z-index: 4;
+      position: relative;
+      background-color: #f8f8f8;
+      .profile_picture {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        overflow: hidden;
+        position: relative;
+        img {
+          background-position: center;
+          background-repeat: no-repeat;
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          height: 100%;
+          max-width: fit-content;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      .circle {
+        display: block;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background:rgba(110, 127, 243, 0.2);
+        margin: -25px 0 0 0;
+        transition: 5s ease;
+        position: absolute;
+        z-index: -1;
+        animation-iteration-count: infinite !important;
+      }
+      .delay1 {
+        animation: waves 4.5s linear;
+        animation-delay: .1s;
+      }
+
+      .delay2 {
+        animation: waves 4.5s linear .7s forwards;
+      }
+
+      .delay3 {
+        animation: waves 4.5s linear 1.3s forwards;
+      }
+
+      .delay4 {
+        animation: waves 4.5s linear 1.9s forwards;
+      }
+      @keyframes waves {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+
+        100% {
+          transform: scale(5);
+          opacity: 0;
+        }
+      }
+      p {
+        font-size: 16px;
+        opacity: 0.5;
+      }
+    }
+    #details_wrapper {
+      display: none;
+    }
+  }
+}
+
+.footer {
+  .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .button {
+      height: 50px;
+      width: 50px;
+      border-radius: 100%;
+    }
+    [small] {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
+
+page-match.show_details {
+  .profile {
+    position: relative;
+    //height: calc(100vh - 145px);
+    border-radius: 8px;
+    .top_slide {
+      display: flex;
+      position: absolute;
+      top: 2px;
+      left: 0;
+      right: 0;
+      padding: 4px;
+      z-index: 1;
+      i {
+        border-radius: 8px;
+        min-height: 4px;
+        flex: 1;
+        background-color: #fff;
+        margin: 0 4px;
+        opacity: 0.5;
+      }
+    }
+    .slide_img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      z-index: 1;
+      div {
+        flex: 1;
+      }
+    }
+    .pro_img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: calc(100vh - 145px);
+      border-radius: 8px;
+      position: relative;
+      #like {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 2;
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 8px;
+      }
+      #dislike {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 2;
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        background-color: #F44336;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 8px;
+      }
+    }
+    .text {
+      text-shadow: none;
+      background-color: white;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      .description {
+        h2 {
+          color: rgb(56, 56, 56);
+        }
+        p {
+          color: #666666;
+          .icon {
+            margin-right: 8px;
+          }
+        }
+      }
+      .button {
+      }
+      #down {
+        transform: scale(1);
+        display: block;
+      }
+      #information {
+        transform: scale(0);
+        display: none;
+      }
+    }
+  }
+
+  #picturecard {
+    display: none;
+  }
+  #details_wrapper {
+    display: block;
+  }
+  .details_card {
+    padding-top: 0;
+    .item_details {
+      margin: 0;
+      line-height: 24px;
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: #666666;
+    }
+    .details_btn {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 16px;
+      box-shadow: none;
+      min-height: 52px;
+      border-radius: 6px;
+    }
+
+  }
+}

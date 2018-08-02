@@ -1,0 +1,20 @@
+<ion-content padding>
+  <ion-header no-border="">
+
+    <ion-navbar transparent=""></ion-navbar>
+
+  </ion-header>
+
+  <div class="wrapper">
+    <div class="image_wrapper" (tap)="changeprofilepic()">
+      <img [src]="base64Image">
+    </div>
+
+    <input type="text" placeholder="Enter Your Name">
+
+    <button ion-button="" outline class="login_btn" (tap)="tab()">
+      Setup Profile
+    </button>
+
+  </div>
+</ion-content>

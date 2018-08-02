@@ -1,0 +1,203 @@
+<ion-header mode="md">
+
+  <ion-toolbar color="completelight">
+    <ion-buttons left="" style="margin-left: 6px;position: absolute" (tap)="back()">
+      <button ion-button="" icon-only="">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title mode="ios" *ngFor="let c of cards">
+      <img src="{{c.picture.thumbnail}}">
+      {{ c.name.first }} {{c.name.last}}
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding #chatcontent>
+  <ul *ngFor="let c of cards" #scrollMe>
+        <li class="mymsg">
+          <div class="msg_content">
+            Hello there
+          </div>
+          <time>12:30 p.m</time>
+        </li>
+        <li class="othermsg">
+          <div class="msg_content">
+            Yes, how are you?
+          </div>
+          <time>12:31 p.m</time>
+        </li>
+        <li class="mymsg">
+          <div class="msg_content">
+            Am fine, send any image that you have in your gallery.
+          </div>
+          <time>12:32 p.m</time>
+        </li>
+        <li class="othermsg">
+          <div class="msg_content" [ngClass]="img==''?'':'no_paddng'">
+            <img src="{{img}}" imageViewer>
+          </div>
+          <time>12:33 p.m</time>
+        </li>
+        <li class="othermsg">
+          <div class="msg_content">
+            Is it okay?
+          </div>
+          <time>12:33 p.m</time>
+        </li>
+        <li class="mymsg">
+          <div class="msg_content">
+            Yes absolutely. I am sending you a animated video.Watch it.
+          </div>
+          <time>12:34 p.m</time>
+        </li>
+        <li class="mymsg">
+          <div class="msg_content" [ngClass]="vdo==''?'':'no_paddng'">
+            <video width="100%" controls=""
+                   poster="https://image.tmdb.org/t/p/w533_and_h300_bestv2/aHLST0g8sOE1ixCxRDgM35SKwwp.jpg">
+              <source src="{{vdo}}" type="video/mp4">
+            </video>
+          </div>
+          <time>12:35 p.m</time>
+        </li>
+        <li class="othermsg">
+          <div class="msg_content">
+            Awesome video, I like it very much.
+          </div>
+          <time>12:36 p.m</time>
+
+        </li>
+        <li class="othermsg">
+          <div class="msg_content">
+            Now bye, talk to you later.
+          </div>
+          <time>12:37 p.m</time>
+        </li>
+        <li class="mymsg">
+          <div class="msg_content">
+            Okay, bye take care and whenever you get time please check this pdf opener.
+          </div>
+          <time>12:38 p.m</time>
+        </li>
+        <li class="mymsg">
+          <div class="msg_content" [ngClass]="img==''?'':'no_paddng'" (tap)="onOpenPDF()">
+            <img src="{{pdfpreview}}">
+          </div>
+          <time>12:39 p.m</time>
+        </li>
+        <li class="othermsg">
+          <div class="msg_content">
+            Wow that's a nice pdf opener.It's also have zoom in zoom out features.
+          </div>
+          <time>12:40 p.m</time>
+        </li>
+        <li class="mymsg">
+          <div class="msg_content">
+            Thanks man!
+          </div>
+          <time>12:41 p.m</time>
+        </li>
+
+    <!--send photos from camera or gallery-->
+    <li class="mymsg" *ngIf="photos != ''">
+
+      <!--Click and send from camera-->
+      <div class="msg_content" [ngClass]="img==''?'':'no_paddng single_img'" *ngIf="photolength == 1">
+        <div class="send_images" *ngFor="let photo of photos" style="display: block">
+          <img src="{{photo}}" imageViewer/>
+        </div>
+      </div>
+
+      <!--choose from gallery multiple images-->
+      <div class="msg_content" [ngClass]="img==''?'':'no_paddng'" *ngIf="photolength > 1 ">
+        <div class="send_images" *ngFor="let photo of photos" style="display: block">
+          <img src="{{photo}}" imageViewer/>
+        </div>
+      </div>
+      <time>{{today | date:'shortTime'}}</time>
+    </li>
+    <!--send photos from camera or gallery end-->
+
+    <!--send your current location-->
+    <li class="mymsg" *ngIf="locationb">
+      <div class="msg_content" [ngClass]="img==''?'':'no_paddng'"
+           style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;width: 100%" (tap)="locationpreview()">
+        <img src="{{mappreview}}">
+      </div>
+      <div class="msg_content" style="width: 100%;border-top-left-radius: 0; border-top-right-radius: 0;"
+           (tap)="locationpreview()">
+        {{locationb}}
+      </div>
+      <time>{{today | date:'shortTime'}}</time>
+    </li>
+    <!--send your current location end-->
+
+    <!--record audio and sent-->
+    <li class="mymsg" *ngIf="audio">
+      <div class="msg_content" *ngFor="let audio of audioList; index as i;" [ngClass]="img==''?'':'no_paddng'">
+        <audio controls>
+          <source src="{{filePath}}" type="audio/ogg">
+          <source src="{{filePath}}" type="audio/mpeg">
+        </audio>
+      </div>
+      <time>{{today | date:'shortTime'}}</time>
+    </li>
+    <!--record audio and sent end-->
+
+    <!--send contact from contactlist-->
+    <li class="mymsg" *ngIf="contactList">
+      <div class="msg_content" [ngClass]="img==''?'':'user_no_paddng'">
+        <div class="contact_wrapper">
+          <div class="user_no" no-lines="">
+            <div class="dtls">
+              <h5>{{contactList.displayName}}</h5>
+              <p>{{contactList.phoneNumbers[0].value}}</p>
+            </div>
+          </div>
+          <button ion-button="" mode="ios" (tap)="savecontact()">Save</button>
+        </div>
+      </div>
+      <time>{{today | date:'shortTime'}}</time>
+    </li>
+    <!--send contact from contactlist end-->
+
+  </ul>
+
+</ion-content>
+<ion-footer no-border="" mode="md">
+  <div class="reply">
+    <div class="input_area">
+      <button ion-button="" clear icon-only="" (tap)="attach($event)">
+        <ion-icon name="attach"></ion-icon>
+      </button>
+      <input type="text" placeholder="Type messege..">
+    </div>
+    <button ion-button="" clear icon-only="">
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </div>
+
+  <div id="record_audio">
+    <div class="record_btn_area">
+      <button ion-button icon-only="" (tap)="stopRecord()" *ngIf="recording" mode="ios">
+        <ion-icon name="send"></ion-icon>
+      </button>
+      <button ion-button icon-only="" (tap)="startRecord()" *ngIf="!recording" mode="ios">
+        <ion-icon name="mic"></ion-icon>
+      </button>
+    </div>
+    <div class="record_content_area">
+      <div id="waveform" *ngIf="recording">
+        <img src="assets/imgs/record_audio.gif" alt="">
+      </div>
+      <p *ngIf="!recording">
+        Record your message.
+      </p>
+    </div>
+    <button ion-button icon-only="" clear (tap)="close_record()" mode="ios">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </div>
+
+</ion-footer>

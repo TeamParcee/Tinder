@@ -1,0 +1,43 @@
+<ion-content>
+  <ion-row>
+    <ion-col col-4>
+      <button ion-button="" clear icon-only="" color="dark" (tap)="documentpicker()">
+        <img src="assets/imgs/document.svg" alt="">
+        <input type="file" class="document_picker">
+        <label>Document</label>
+      </button>
+    </ion-col>
+    <ion-col col-4>
+      <button ion-button="" clear icon-only="" color="dark" (tap)="takePicture()">
+        <img src="assets/imgs/photo-camera.svg" alt="">
+        Camera
+      </button>
+    </ion-col>
+    <ion-col col-4>
+      <button ion-button="" clear icon-only="" color="dark" (tap)="openImagePicker()">
+        <img src="assets/imgs/gallery.svg" alt="">
+        Gallery
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-4>
+      <button ion-button="" clear icon-only="" color="dark" (tap)="geolocate()">
+        <img src="assets/imgs/location.svg" alt="">
+        Location
+      </button>
+    </ion-col>
+    <ion-col col-4>
+      <button ion-button="" clear icon-only="" color="dark" (tap)="recordaudio()">
+        <img src="assets/imgs/audio_record.svg" alt="">
+        Record
+      </button>
+    </ion-col>
+    <ion-col col-4>
+      <button ion-button="" clear icon-only="" color="dark" (tap)="getContacts()">
+        <img src="assets/imgs/contact.svg" alt="">
+        Contact
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

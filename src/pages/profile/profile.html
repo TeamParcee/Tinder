@@ -1,0 +1,61 @@
+<ion-content>
+  <div class="wrapper" *ngFor="let c of cards">
+    <div class="profile_area">
+      <div class="profile_img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUrduG62_6UNz7eAe4wFogHaY4-aQbaKiZhJvAlDW2b5YPQDd" alt="">
+      </div>
+      <div class="online"></div>
+    </div>
+    <h4>Maurice Boyd</h4>
+    <!--<h4>{{ c.name.first }} {{ c.name.last}}</h4>-->
+    <p>1028 Eighth St</p>
+    <!--<p>{{ c.location.city }}</p>-->
+  </div>
+  <div class="btn-area">
+    <button ion-button icon-only clear (tap)="settings()">
+      <ion-icon name="md-settings"></ion-icon>
+    </button>
+    <button ion-button icon-only clear (tap)="profileedit()">
+      <ion-icon name="md-create"></ion-icon>
+    </button>
+  </div>
+  <div class="profile_details" *ngFor="let c of cards">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        <!--{{ c.email }}-->
+        maurice.boyd11@example.com
+      </ion-item>
+      <ion-item>
+        <ion-icon name="calendar" item-start></ion-icon>
+        <!--{{ c.dob }}-->
+        11/1/1978
+      </ion-item>
+      <ion-item>
+        <ion-icon name="call" item-start></ion-icon>
+        <!--{{ c.phone }}-->
+        (830)-313-1586
+      </ion-item>
+      <ion-item>
+        <ion-icon name="male" item-start></ion-icon>
+        <!--{{ c.gender }}-->
+        Male
+      </ion-item>
+      <ion-item class="address">
+        <ion-icon name="pin" item-start></ion-icon>
+<!--
+        {{ c.location.street }}, {{ c.location.state }}, {{ c.location.postcode }}, {{ c.location.city }}, {{
+        c.location.country }}
+-->
+
+        Kelley A. Fleming 196 Woodside Circle Mobile, FL 36602 Phone:240-256-1942
+      </ion-item>
+    </ion-list>
+    <div padding="">
+      <button ion-button="" outline class="premium_btn" color="greybtn">
+        Get Premium
+      </button>
+    </div>
+  </div>
+
+</ion-content>

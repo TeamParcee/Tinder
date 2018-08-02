@@ -1,0 +1,159 @@
+<ion-content hide-fab>
+
+  <div padding>
+    <ion-segment [(ngModel)]="user" mode="ios">
+      <ion-segment-button value="msgs">
+        Messeges
+      </ion-segment-button>
+      <ion-segment-button value="posts">
+        Posts
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div [ngSwitch]="user">
+
+    <div *ngSwitchCase="'msgs'">
+      <ion-list no-border="">
+        <ion-item no-lines="" *ngFor="let c of cards" (tap)="message()">
+          <ion-avatar item-start>
+            <img src="{{c.picture.large}}" imageViewer>
+            <div id="online"></div>
+          </ion-avatar>
+          <h2>{{ c.name.first }} {{c.name.last}}</h2>
+          <p>{{ c.location.state }}, {{ c.location.city }}, {{c.location.country }} {{c.location.street }}</p>
+          <span item-end="" class="right_side">
+        <time>{{today | date:'shortTime'}}</time>
+        <ion-badge color="secondary">2</ion-badge>
+      </span>
+        </ion-item>
+      </ion-list>
+
+      <ion-fab bottom right style="position: fixed" id="fab">
+        <button ion-fab>
+          <ion-icon name="add"></ion-icon>
+        </button>
+        <ion-fab-list side="top">
+          <button ion-fab no-padding="">
+            <img src="assets/imgs/singlechat.svg" alt="">
+          </button>
+          <button ion-fab no-padding="">
+            <img src="assets/imgs/groupchat.svg" alt="">
+          </button>
+        </ion-fab-list>
+      </ion-fab>
+
+    </div>
+
+
+    <div *ngSwitchCase="'posts'">
+
+      <!--send photos from camera or gallery-->
+      <ion-card *ngFor="let photo of photos">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="https://randomuser.me/api/portraits/men/97.jpg">
+          </ion-avatar>
+          <h2>Erin Alvarez</h2>
+          <p>{{today | date:'shortTime'}}</p>
+        </ion-item>
+
+        <div class="post_imgs">
+          <div class="loop_wrapper">
+            <img src="{{photo}}" imageViewer/>
+            <div class="img_loader_wrapper">
+              <img src="assets/imgs/postimg_loader.gif">
+            </div>
+          </div>
+        </div>
+
+        <ion-card-content>
+          {{posttext}}
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>12 Likes</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <!--send photos from camera or gallery end-->
+
+      <!--other user post-->
+      <ion-card *ngFor="let c of cards;let i=index;">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="{{c.picture.large}}">
+          </ion-avatar>
+          <h2>{{ c.name.first }} {{c.name.last}}</h2>
+          <p>{{today | date:'shortTime'}}</p>
+        </ion-item>
+
+        <div class="post_imgs">
+          <div class="loop_wrapper" *ngFor="let data of postimg;let j=index;">
+            <img *ngIf="i==j" src="{{data.urls.small}}" imageViewer>
+            <div class="img_loader_wrapper">
+              <img *ngIf="i==j" src="assets/imgs/postimg_loader.gif">
+            </div>
+          </div>
+        </div>
+
+        <ion-card-content>
+          <p>{{ c.location.state }}, {{ c.location.city }}, {{c.location.country }} {{c.location.street }}</p>
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>12 Likes</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small (tap)="post()">
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <!--other user post end-->
+
+      <ion-fab bottom right style="position: fixed" id="fab">
+        <button ion-fab>
+          <ion-icon name="add"></ion-icon>
+        </button>
+        <ion-fab-list side="top">
+          <button ion-fab no-padding="" (tap)="takePicture()">
+            <img src="assets/imgs/photo-camera.svg" alt="">
+          </button>
+          <button ion-fab no-padding="" (tap)="openImagePicker()">
+            <img src="assets/imgs/gallery.svg" alt="">
+          </button>
+        </ion-fab-list>
+      </ion-fab>
+
+    </div>
+  </div>
+
+</ion-content>

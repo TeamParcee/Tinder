@@ -1,0 +1,143 @@
+page-replycomment {
+  ion-card.card {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    ion-avatar {
+      margin-left: 8px !important;
+    }
+    ion-row {
+      border-top: 1px solid #e0e0e0;
+      ion-col {
+        display: flex;
+        .button {
+          margin: 0;
+          text-transform: capitalize;
+          padding: 0 0.5em;
+          font-size: 13px;
+        }
+        ion-note {
+          margin: auto;
+        }
+      }
+    }
+    ion-label {
+      display: flex;
+      justify-content: space-between;
+    }
+    ion-item {
+      .item-inner {
+        padding-right: 0;
+        ion-label {
+          margin: auto 0;
+        }
+      }
+    }
+    ion-card-content {
+      p {
+        text-align: left;
+        line-height: 24px;
+      }
+    }
+  }
+  .comment_area {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 8px;
+    .user_comment {
+      ion-item {
+        padding-left: 8px;
+        ion-avatar {
+          align-self: flex-start;
+          margin-top: 2px !important;
+        }
+        ion-label {
+          white-space: normal;
+          margin-top: 0;
+          .divide {
+            display: flex;
+            p{
+              line-height: 24px;
+              margin-bottom: 4px;
+            }
+            .item-button.button {
+              align-self: flex-start;
+              margin: 0;
+            }
+          }
+        }
+        ion-row {
+          border-bottom: 1px solid #e0e0e0;
+          ion-col.col {
+            display: flex;
+            padding: 0;
+            .button {
+              margin: 0;
+              text-transform: capitalize;
+              padding: 0 0.5em;
+              font-size:13px !important;
+              margin-bottom: 8px;
+            }
+            ion-note {
+              margin: auto;
+              margin-right: 0;
+              font-size: 13px;
+            }
+          }
+        }
+
+      }
+      &:last-child{
+        ion-row {
+          border-bottom: 0;
+        }
+      }
+    }
+
+  }
+  .reply_input {
+    bottom: 0;
+    width: 100%;
+    float: left;
+    display: flex;
+    background-color: #e8e8e8;
+    .input_area {
+      position: relative;
+      flex: 1;
+      padding: 8px;
+      textarea {
+        flex: 1;
+        font-size: 15px;
+        float: left;
+        height: 50px;
+        border: 0;
+        border-radius: 4px;
+        border-top-right-radius: 0;
+        position: relative;
+        width: 100%;
+        padding: 4px;
+        background-color: #fff;
+      }
+      .right_arrow {
+        width: 0;
+        height: 0;
+        border-top: 0 solid transparent;
+        border-bottom: 17px solid transparent;
+        border-left: 17px solid #fff;
+        position: absolute;
+        right: -8px;
+        top: 8px;
+      }
+    }
+    button.button {
+      font-size: 16px;
+      min-height: 0;
+      text-transform: capitalize;
+      font-weight: normal;
+      margin: 8px;
+      align-self: flex-end;
+      height: 40px;
+      width: 40px;
+      border-radius: 100%;
+    }
+  }
+}

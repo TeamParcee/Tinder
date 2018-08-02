@@ -1,0 +1,82 @@
+.add {
+  .toast-wrapper.toast-top {
+    background-color: #4CAF50;
+  }
+}
+
+.remove {
+  .toast-wrapper.toast-top {
+    background-color: #F44336;
+  }
+}
+
+image-viewer {
+  ion-navbar .bar-button-default {
+    color: black !important;
+  }
+  ion-backdrop {
+    background-color: #ffffff;
+  }
+}
+
+ion-alert.modified_alert .alert-wrapper {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.toolbar-background-ios {
+  border-width: 0;
+}
+
+.header-md::after {
+  opacity: 0.3;
+}
+
+.attachemnt {
+  ion-backdrop {
+    opacity: 0.08;
+  }
+  .popover-content {
+    width: 80%;
+    max-width: 600px;
+    box-shadow: none;
+    border-radius: 6px;
+  }
+}
+
+.customloader {
+  .loading-wrapper {
+    box-shadow: none;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    .animated_pin {
+      img {
+        display: flex;
+      }
+    }
+  }
+}
+
+.post_text {
+  .alert-wrapper {
+    box-shadow: none;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    min-width: 90%;
+  }
+}
+
+#fab.non_active{
+  transform: scale(0);
+  transition: all linear 0.3s;
+}
+#fab.active{
+  transform: scale(1);
+  transition: all linear 0.3s;
+}
+.swiper-pagination-bullet-active {
+  background: map-get($colors, primary ); 
+}

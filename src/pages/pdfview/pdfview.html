@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="completelight">
+    <ion-title>Pdf Title</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onClose()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <pdf-viewer [src]="displayData.pdfSource"
+              [show-all]="true"
+              [original-size]="false"
+              [zoom]="zoom"
+              style="display: block"></pdf-viewer>
+
+  <ion-fab right (tap)="pdfzoom()" style="bottom: 60px;">
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-fab bottom right (tap)="pdfzoomout()">
+    <button ion-fab mini><ion-icon name="remove"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

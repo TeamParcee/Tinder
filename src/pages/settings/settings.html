@@ -1,0 +1,115 @@
+<ion-header>
+
+  <ion-navbar color="completelight">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header mode="md">Show Me</ion-list-header>
+    <ion-item>
+      <ion-icon name="male" item-start></ion-icon>
+      <ion-label>Male</ion-label>
+      <ion-toggle item-end checked="false" mode="wp"></ion-toggle>
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-icon name="female" item-start></ion-icon>
+      <ion-label>Female</ion-label>
+      <ion-toggle item-end checked="true" mode="wp"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Maximum Distance
+      <ion-badge item-end>{{distance}}KM</ion-badge>
+    </ion-list-header>
+    <ion-item no-lines="">
+      <ion-icon name="pin" item-start></ion-icon>
+      <ion-range [(ngModel)]="distance" mode="md"></ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Age Range
+      <ion-badge item-end>{{age.lower}}</ion-badge>
+      <span item-end>-</span>
+      <ion-badge item-end>{{age.upper}}</ion-badge>
+    </ion-list-header>
+    <ion-item no-lines="">
+      <ion-icon name="calendar" item-start></ion-icon>
+      <ion-range [(ngModel)]="age" dualKnobs="true" min="12" max="60" mode="md"></ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Share My Feed</ion-list-header>
+    <ion-item>
+      <ion-icon name="images" item-start></ion-icon>
+      <ion-label>Photos</ion-label>
+      <ion-toggle item-end checked="true" mode="wp"></ion-toggle>
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-icon name="body" item-start></ion-icon>
+      <ion-label>Activity</ion-label>
+      <ion-toggle item-end checked="true" mode="wp"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Notifications</ion-list-header>
+    <ion-item no-lines="">
+      <ion-icon name="notifications" item-start></ion-icon>
+      <ion-label>Show Notification</ion-label>
+      <ion-toggle item-end checked="true" mode="wp"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Show Distance In</ion-list-header>
+    <div class="segment_area">
+      <ion-segment [(ngModel)]="distancetype" mode="ios">
+        <ion-segment-button value="km">
+          Km.
+        </ion-segment-button>
+        <ion-segment-button value="mi">
+          Mi.
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </ion-list>
+
+  <ion-list class="contact_us_area">
+    <ion-list-header mode="md">Contact Us</ion-list-header>
+    <ion-item (tap)="rating()" no-lines="">
+      Rate us
+    </ion-item>
+    <ion-item no-lines="">
+      Licenses
+    </ion-item>
+    <ion-item no-lines="">
+      Privacy Policy
+    </ion-item>
+    <ion-item no-lines="">
+      Terms of Services
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="contact_us_area">
+    <ion-item no-lines="" text-center="">
+      Logout
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="contact_us_area">
+    <ion-item no-lines text-center="" (tap)="delaccount()">
+      <span style="color: red">
+              Delete Account
+      </span>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
